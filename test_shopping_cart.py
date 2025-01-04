@@ -1,6 +1,6 @@
 from unittest.mock import Mock
 from item_database import ItemDatabase
-import shopping_cart as sc
+import src.calculator as sc
 import pytest
 
 @pytest.fixture
