@@ -1,5 +1,7 @@
-import pytest
+from unittest.mock import Mock
+from item_database import ItemDatabase
 import shopping_cart as sc
+import pytest
 
 # Fixtures
 @pytest.fixture
