@@ -57,13 +57,12 @@ def test_add_invalid_quantity(empty_cart, price_map):
 @pytest.mark.usefixtures("filled_cart")
 def test_cart_not_empty(filled_cart):
     assert not sc.is_empty(filled_cart)
+    
 
-
-@patch("random.randint")
-@patch("src.shopping_cart.total_price")
-def test_get_discounted_price(mock_total_price, mock_randint, filled_cart, price_map):
-	mock_randint.return_value = 7
-	mock_total_price.return_value = (2*1 + 3*3)
+def test_get_discounted_price(filled_cart, price_map):
+    with patch("random.randint") as mock_randint, patch("src.shopping_cart.total_price") as mock_total_price:
+        mock_randint.return_value = 7
+        mock_total_price.return_value = (2*1 + 3*3)
 	
-	discounted_price = sc.get_discounted_price(filled_cart, price_map)
-	assert discounted_price == round((2*1 + 3*3)*0.1, 2)
+        discounted_price = sc.get_discounted_price(filled_cart, price_map)
+        assert discounted_price == round((2*1 + 3*3)*0.1, 2)
