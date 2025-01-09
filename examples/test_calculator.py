@@ -1,5 +1,5 @@
 import pytest
-from src.calculator import (
+from examples.calculator import (
     add,
     subtract,
     multiply,
