@@ -6,7 +6,7 @@ from starting_code.shopping_cart import (
     find_item,
 )
 
-# Assertions Exercise
+# Assertions Exercise -------------------------------------------------------------
 
 """Test 1: Add Item to Cart"""
 def test_add_to_cart():
@@ -35,7 +35,7 @@ def test_find_item():
 
 
 
-# Error handling Exercise
+# Error handling Exercise -------------------------------------------------------------
 """Test 1: Built-in Exceptions"""
 from starting_code.shopping_cart import add_to_cart2
 def test_add_to_cart():
@@ -63,8 +63,65 @@ def test_checkout():
 
 
 
+#----------------------------------------------------------------------------------------------------
 # Fixtures Exercise
+from shopping_cart import (
+    total_items,
+    total_price
+)
 
+"""Fixtures"""
+# Write decorator
+def filled_cart():
+    # Returns filled cart
+    pass
+
+# Write decorator
+def price_map():
+    # Returns price map
+    pass
+
+
+"""Test 1: Check Total Number of Items"""
+def test_total_items(): # Pass in needed fixture
+    # Test total_items() using fixture
+    pass
+
+
+"""Test 2: Get Total Price"""
+def test_total_price(filled_cart, price_map): # Pass in needed fixtures
+    # Test total_price() using fixtures
+    pass
+
+#----------------------------------------------------------------------------------------------------
 # Marking Exercise
+from shopping_cart import(
+    reset_cart,
+    find_item
+)
 
+"""Test 1: Check Reset Cart (Skip this test)"""
+# Marking for Q3
+# Marking for Q1
+def test_reset_cart(filled_cart):
+    updated_cart = reset_cart(filled_cart)
+    assert updated_cart == []
+
+
+"""Test 2: Check Items in Cart"""
+# Marking for Q3
+# Marking for Q2
+def test_find_items(filled_cart, item, expected):
+    # Test find_item() output
+    pass
+
+#----------------------------------------------------------------------------------------------------
 # Mocking Exercise
+from unittest.mock import patch
+from shopping_cart import get_discounted_price
+
+"""Test 1: Check Discounted Price"""
+def test_get_discounted_price(filled_cart, price_map):
+    # Mock return values for randint and total_price
+    # Test get_discounted_price
+    pass

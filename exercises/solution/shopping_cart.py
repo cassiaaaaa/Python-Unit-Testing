@@ -1,5 +1,3 @@
-import random
-
 #Assertion Exercise --------------------------------------------------------
 #Function 1: Add Item to Cart
 def add_to_cart(cart, item):
@@ -41,39 +39,35 @@ def checkout(cart):
         raise CartError("Cannot checkout an empty cart.")
     return f"Checked out {len(cart)} item(s)!"
 
-
-
-def add_item(cart, item, quantity, price_map):
-    if quantity <= 0:
-        raise ValueError("Quantity must be greater than zero")
-    if item not in price_map:
-        raise KeyError("Item does not exist, ask a staff")
-    cart.append({'item': item, 'quantity': quantity})
-
-
-def remove_item(cart, item):
-    cart.remove(item)
-    return cart
-
-
+#Fixtures Exercise --------------------------------------------------------
+#Function 1: Get Total Number of Items
 def total_items(cart):
-    total_items = 0
-    for item in cart:
-        total_items += item["quantity"]
-    return total_items
+    return len(cart)
 
 
-def is_empty(cart):
-    return len(cart) == 0
-
-
+# Function 2: Get Total Price of Items
 def total_price(cart, price_map):
     total_price = 0
     for item in cart:
-        total_price += price_map[item]*item["quantity"]
+        total_price += price_map[item]
     return total_price
 
+#Marking Exercise --------------------------------------------------------
+#Function 1:
+def reset_cart(cart):
+    # Expected code
+    # return []
+    pass
 
+
+#Function 2: Check if Item in Cart
+def find_item(cart, item):
+    return item in cart
+
+#Mocking Exercise --------------------------------------------------------
+import random
+
+# Function 1
 def get_discounted_price(cart, price_map):
 	lucky_number = random.randint(1, 2000)
 	if lucky_number == 7:

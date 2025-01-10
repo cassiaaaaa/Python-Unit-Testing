@@ -22,7 +22,7 @@ def is_cart_empty(cart):
 def find_item(cart, item):
     return item in cart
 
-"""------------------------------------Error Raising Exercise---------------------------------"""
+"""------------------------------------Error Raising Exercise------------------------------------"""
 
 #Built-in Exceptions
 
@@ -42,3 +42,38 @@ def checkout(cart):
     if not cart:
         raise CartError("Cannot checkout an empty cart.")
     return f"Checked out {len(cart)} item(s)!"
+
+"""---------------------------------------Fixtures Exercise---------------------------------------"""
+#Function 1: Get Total Number of Items
+def total_items(cart):
+    return len(cart)
+
+
+# Function 2: Get Total Price of Items
+def total_price(cart, price_map):
+    total_price = 0
+    for item in cart:
+        total_price += price_map[item]
+    return total_price
+
+"""---------------------------------------Marking Exercise---------------------------------------"""
+#Function 1:
+def reset_cart(cart):
+    # Expected code
+    # return []
+    pass
+
+
+#Function 2: Check if Item in Cart
+def find_item(cart, item):
+    return item in cart
+
+"""---------------------------------------Mocking Exercise---------------------------------------"""
+import random
+
+# Function 1
+def get_discounted_price(cart, price_map):
+	lucky_number = random.randint(1, 2000)
+	if lucky_number == 7:
+		discounted_price = total_price(cart, price_map) * 0.1
+		return round(discounted_price, 2)
