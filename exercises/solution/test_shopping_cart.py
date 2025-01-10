@@ -2,6 +2,86 @@ import pytest
 import shopping_cart as sc
 from unittest.mock import patch
 
+#-------------------------------------------------------------------------
+#Assertion Exercise
+from solution.shopping_cart import (
+    add_to_cart,
+    remove_from_cart,
+    is_cart_empty,
+    find_item
+)
+
+"""Test 1: Add Item to Cart"""
+def test_add_to_cart():
+    cart = []
+    add_to_cart(cart, "apple")
+    assert cart == ["apple"]  # Check that "apple" was added to the cart
+    add_to_cart(cart, "banana")
+    assert cart == ["apple", "banana"]  # Check that "banana" was also added
+
+
+
+
+"""Test 2: Remove Item from Cart"""
+def test_remove_from_cart():
+    cart = ["apple", "banana"]
+    remove_from_cart(cart, "apple")
+    assert cart == ["banana"]  # Check that "apple" was removed
+    remove_from_cart(cart, "orange")  # Try to remove an item not in the cart
+    assert cart == ["banana"]  # Cart remains unchanged
+
+
+
+
+"""Test 3: Check for Empty Cart"""
+def test_is_cart_empty():
+    cart = []
+    assert is_cart_empty(cart) is True  # Cart is empty
+    cart.append("apple")
+    assert is_cart_empty(cart) is False  # Cart is not empty
+
+
+
+
+"""Test 4: Check if Item in Cart"""
+def test_find_item():
+    cart = ["apple", "banana"]
+    assert find_item(cart, "apple") is True  # "apple" is in the cart
+    assert find_item(cart, "orange") is False  # "orange" is not in the cart
+#----------------------------------------------------------------------------------
+#Error Raising Exercise
+
+"""Built-in Exceptions"""
+from solution.shopping_cart import (
+    add_to_cart2
+)
+
+def test_add_to_cart2():
+    # Test valid quantity
+    assert add_to_cart2("apple", 3) == "3 apple(s) added to the cart!"
+
+    # Test invalid negative quantity
+    with pytest.raises(ValueError):
+        add_to_cart2("apple", -1)
+
+"""Custom Exceptions"""
+from solution.shopping_cart import (
+    CartError,
+    checkout
+)
+
+def test_checkout():
+    # Test non-empty cart
+    assert checkout(["apple", "banana", "carrot"]) == "Checked out 3 item(s)!"
+
+    # Test empty cart raises CartError
+    with pytest.raises(CartError, match="Cannot checkout an empty cart."):
+        checkout([])
+
+#----------------------------------------------------------------------------------------------------
+
+
+
 
 @pytest.fixture
 def empty_cart():
