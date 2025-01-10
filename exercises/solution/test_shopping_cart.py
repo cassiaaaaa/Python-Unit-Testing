@@ -34,12 +34,6 @@ def test_is_cart_empty():
     cart.append("apple")
     assert is_cart_empty(cart) is False  # Cart is not empty
 
-
-"""Test 4: Check if Item in Cart"""
-def test_find_item():
-    cart = ["apple", "banana"]
-    assert find_item(cart, "apple") is True  # "apple" is in the cart
-    assert find_item(cart, "orange") is False  # "orange" is not in the cart
 #----------------------------------------------------------------------------------
 #Error Raising Exercise
 

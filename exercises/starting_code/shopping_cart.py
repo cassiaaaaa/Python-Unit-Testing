@@ -17,11 +17,6 @@ def remove_from_cart(cart, item):
 def is_cart_empty(cart):
     return len(cart) == 0
 
-
-#Function 4: Check if Item in Cart
-def find_item(cart, item):
-    return item in cart
-
 """------------------------------------Error Raising Exercise------------------------------------"""
 
 #Built-in Exceptions

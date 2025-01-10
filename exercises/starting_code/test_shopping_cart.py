@@ -1,5 +1,5 @@
 import pytest
-from starting_code.shopping_cart import (
+from shopping_cart import (
     add_to_cart,
     remove_from_cart,
     is_cart_empty,
@@ -27,17 +27,9 @@ def test_add_to_cart():
 
 
 
-"""Test 4: Check if Item in Cart"""
-def test_find_item():
-    cart = ["apple", "banana"]
-
-"""Write your code below"""
-
-
-
 # Error handling Exercise -------------------------------------------------------------
 """Test 1: Built-in Exceptions"""
-from starting_code.shopping_cart import add_to_cart2
+from shopping_cart import add_to_cart2
 def test_add_to_cart():
     # Test valid quantity
     pass
@@ -47,9 +39,9 @@ def test_add_to_cart():
 
 
 
-# """Test 2: Custom Exceptions"""
+"""Test 2: Custom Exceptions"""
 
-from starting_code.shopping_cart import (
+from shopping_cart import (
     CartError,
     checkout
 )
@@ -89,7 +81,7 @@ def test_total_items(): # Pass in needed fixture
 
 
 """Test 2: Get Total Price"""
-def test_total_price(filled_cart, price_map): # Pass in needed fixtures
+def test_total_price(): # Pass in needed fixtures
     # Test total_price() using fixtures
     pass
 
@@ -101,8 +93,8 @@ from shopping_cart import(
 )
 
 """Test 1: Check Reset Cart (Skip this test)"""
-# Marking for Q3
-# Marking for Q1
+# Write Marking for Q3
+# Write Marking for Q1
 def test_reset_cart(filled_cart):
     updated_cart = reset_cart(filled_cart)
     assert updated_cart == []
