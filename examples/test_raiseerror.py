@@ -55,5 +55,3 @@ def test_authorize_user():
 
     # Test case: Another authorized user
     assert authorize_user("bob", authorized_users) == "Welcome, bob!"
-
-    

@@ -10,21 +10,20 @@ from shopping_cart import (
 
 """Test 1: Add Item to Cart"""
 def test_add_to_cart():
-    """Write your code below"""
-
-
+    #Write your code below
+    pass
 
 
 """Test 2: Remove Item from Cart"""
-"""Write your code below"""
-
-
+def test_remove_from_cart():
+    #Write your code below
+    pass
 
 
 """Test 3: Check for Empty Cart"""
-"""Write your code below"""
-
-
+def test_is_cart_empty():
+    #Write your code below
+    pass
 
 
 # Error handling Exercise -------------------------------------------------------------
