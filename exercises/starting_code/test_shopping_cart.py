@@ -29,7 +29,7 @@ def test_is_cart_empty():
 # Error handling Exercise -------------------------------------------------------------
 """Test 1: Built-in Exceptions"""
 from shopping_cart import add_to_cart2
-def test_add_to_cart():
+def test_add_to_cart2():
     # Test valid quantity
     pass
 
